@@ -1,0 +1,73 @@
+# Package overview
+package_name : customer_churn_prediction
+
+# Data files
+client_data_file : clean_data_after_eda.csv
+price_data_file : price_data.csv
+
+test_size: 0.2
+
+# to set the random seed
+random_state: 0
+
+pipeline_name: customer_churn_prediction
+pipeline_save_file: customer_churn_prediction_output_v
+
+
+# Variables
+target : churn
+
+features :
+  - has_gas
+  - origin_up
+  - price_change_energy
+  - cons_12m
+  - forecast_cons_12m
+  - forecast_discount_energy
+  - forecast_meter_rent_12m
+  - imp_cons
+  - margin_gross_pow_ele
+  - nb_prod_act
+  - net_margin
+  - pow_max
+  - price_off_peak_var
+  - price_off_peak_fix
+  - previous_price
+  - price_sens
+  - end_year
+  - modif_prod_month
+  - renewal_year
+  - renewal_month
+  - diff_act_end
+  - diff_act_modif
+  - diff_end_modif
+  - ratio_last_month_last12m_cons
+
+categorical_vars :
+  - has_gas
+  - origin_up
+  - price_change_energy
+
+numerical_vars :
+  - cons_12m
+  - forecast_cons_12m
+  - forecast_discount_energy
+  - forecast_meter_rent_12m
+  - imp_cons
+  - margin_gross_pow_ele
+  - nb_prod_act
+  - net_margin
+  - pow_max
+  - price_off_peak_var
+  - price_off_peak_fix
+  - previous_price
+  - price_sens
+  - end_year
+  - modif_prod_month
+  - renewal_year
+  - renewal_month
+  - diff_act_end
+  - diff_act_modif
+  - diff_end_modif
+  - ratio_last_month_last12m_cons
+
