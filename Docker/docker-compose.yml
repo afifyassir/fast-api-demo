@@ -1,0 +1,32 @@
+
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+  db:
+    image: "postgres:latest"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: fastapidb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  psql:
+    image: postgres
+    depends_on:
+      - db
+    environment:
+      PGPASSWORD: password
+    command: >
+      psql -h db -U user -d fastapidb
+
+volumes:
+  postgres_data:

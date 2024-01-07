@@ -2,14 +2,14 @@ import logging
 import os
 
 import alembic.config
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.orm import scoped_session, sessionmaker, Session
 from sqlalchemy_utils import database_exists, create_database
 
-from api.config import Config, ROOT
+from app.config import Config, ROOT
 
 _logger = logging.getLogger('mlapi')
 

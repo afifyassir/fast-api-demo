@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from sqlalchemy.orm import Session
 
-from api.persistence.models import (
+from persistence.models import (
     LassoModelPredictions,
     GradientBoostingModelPredictions,
 )

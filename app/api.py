@@ -8,8 +8,9 @@ from sqlalchemy.orm import Session
 from uuid import uuid4
 from loguru import logger
 
-from api.persistence.data_access import PredictionPersistence, ModelType
-from api.persistence.core import get_db_session
+from persistence.data_access import PredictionPersistence, ModelType
+from persistence.core import get_db_session
+
 from app import __version__
 from app.config import settings
 from app.schemas.health import Health

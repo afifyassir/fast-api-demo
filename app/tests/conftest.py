@@ -1,10 +1,17 @@
 from typing import Generator
+import sys
+from pathlib import Path
 
 import pandas as pd
 import pytest
 from fastapi.testclient import TestClient
 
+
+# Add the root of your project to the Python path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 from app.main import app
+
 from model.config.core import config
 from model.preprocessing.data_manager import load_dataset
 
